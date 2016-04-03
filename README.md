@@ -6,7 +6,11 @@ A Clojure library providing functions to calculate Norwegian holidays and workin
 
 Get all holidays for a given year, as a set of `java.time.LocalDate` values:
 ```clojure
-(def holidays (find-holidays 2016))
+; Find all holidays for 2016
+(def holidays-2016 (find-holidays 2016))
+
+; Is today a holiday?
+(contains? holidays-2016 (java.time.LocalDate/now))
 ```
 
 ## License

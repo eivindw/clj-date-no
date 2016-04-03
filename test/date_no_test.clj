@@ -2,7 +2,7 @@
   (:require [clojure.test :refer :all]
             [date-no :refer :all])
   (:use [java-time :only [local-date] :rename {local-date ld}]
-        [clojure.set :only [intersection]]))
+        [clojure.set :only [difference]]))
 
 (deftest find-holidays-2016
   (testing "Find all holidays for 2016"
@@ -21,5 +21,5 @@
                           (ld year 5 17)
                           (ld year 12 25)
                           (ld year 12 26)}]
-      (is (= expected-days (intersection holidays expected-days)))
-      (is (= holidays (intersection holidays expected-days))))))
+      (is (empty? (difference holidays expected-days)))
+      (is (empty? (difference expected-days holidays))))))

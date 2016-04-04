@@ -1,8 +1,7 @@
 (ns date-no-test
   (:require [clojure.test :refer :all]
             [date-no :refer :all])
-  (:use [java-time :only [local-date] :rename {local-date ld}]
-        [clojure.set :only [difference]]))
+  (:use [clojure.set :only [difference]]))
 
 (deftest check-holiday
   (testing "Check specific known holidays"

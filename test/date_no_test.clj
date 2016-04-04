@@ -36,6 +36,8 @@
 
 (deftest count-holidays-2027
   (testing "Count days in year 2027 with one less day"
+    (is (= 5 (count (find-set-holidays 2027))))
+    (is (= 8 (count (find-variable-holidays 2027))))
     (is (= 12 (count (find-holidays 2027))))))
 
 (deftest add-working-days-to-date

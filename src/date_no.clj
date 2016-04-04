@@ -3,19 +3,19 @@
         [easter-day])
   (:import (java.time LocalDate DayOfWeek)))
 
-(defn ld [year month day]
+(defn date [year month day]
   (LocalDate/of year month day))
 
 (defn find-set-holidays [year]
-  #{(ld year 1 1)
-    (ld year 5 1)
-    (ld year 5 17)
-    (ld year 12 25)
-    (ld year 12 26)})
+  #{(date year 1 1)
+    (date year 5 1)
+    (date year 5 17)
+    (date year 12 25)
+    (date year 12 26)})
 
 (defn find-variable-holidays [year]
   (let [esMap (easter-sunday year)
-        eDay (ld year (:month esMap) (:day esMap))]
+        eDay (date year (:month esMap) (:day esMap))]
     #{(.minusDays eDay 7)
       (.minusDays eDay 3)
       (.minusDays eDay 2)

@@ -14,6 +14,9 @@ Get all holidays for a given year, as a set of `java.time.LocalDate` values:
 
 ; Is today a working day?
 (working-day? (java.time.LocalDate/now))
+
+; Add 10 working days (2 weeks) to date - skipping weekends and holidays
+(add-working-days (java.time.localDate/now) 10)
 ```
 
 ## License

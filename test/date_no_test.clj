@@ -33,3 +33,8 @@
                           (ld year 12 26)}]
       (is (empty? (difference holidays expected-days)))
       (is (empty? (difference expected-days holidays))))))
+
+(deftest add-working-days-to-date
+  (testing "Adding working days to given date"
+    (is (= (ld 2016 4 11) (add-working-days (ld 2016 4 4) 5)))
+    (is (= (ld 2016 3 31) (add-working-days (ld 2016 3 21) 5)))))

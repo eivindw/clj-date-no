@@ -1,4 +1,4 @@
-(defproject clj-date-no "0.1.0"
+(defproject clj-date-no "0.2.0-SNAPSHOT"
   :description "Library calculating holidays and workdays for Norway."
   :url "https://github.com/eivindw/clj-date-no"
   :license {:name "Eclipse Public License"

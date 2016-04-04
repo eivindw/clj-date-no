@@ -27,12 +27,11 @@
 (defn working-day? [date]
   (not (or (weekend? date) (holiday? date))))
 
-(defn add-working-days [date noDays]
-  (loop [noDays noDays
-         date date]
-    (let [work-day (working-day? date)]
-      (if (and (zero? noDays) work-day)
-        date
-        (recur
-         (if work-day (dec noDays) noDays)
-         (plus date (days 1)))))))
+(defn working-days [from]
+  (let [next-days #(working-days (plus from (days 1)))]
+    (if (working-day? from)
+      (lazy-seq (cons from (next-days)))
+      (next-days))))
+
+(defn add-working-days [date no-days]
+  (nth (working-days date) no-days))

@@ -10,7 +10,10 @@ Get all holidays for a given year, as a set of `java.time.LocalDate` values:
 (def holidays-2016 (find-holidays 2016))
 
 ; Is today a holiday?
-(contains? holidays-2016 (java.time.LocalDate/now))
+(holiday? (java.time.LocalDate/now))
+
+; Is today a working day?
+(working-day? (java.time.LocalDate/now))
 ```
 
 ## License

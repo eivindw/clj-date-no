@@ -4,6 +4,16 @@
   (:use [java-time :only [local-date] :rename {local-date ld}]
         [clojure.set :only [difference]]))
 
+(deftest check-holiday
+  (testing "Check specific known holidays"
+    (is (holiday? (ld 2016 3 28)))
+    (is (holiday? (ld 2020 5 21)))))
+
+(deftest check-working-day
+  (testing "Check specific known working days"
+    (is (working-day? (ld 2016 4 4)))
+    (is (not (working-day? (ld 2016 4 3))))))
+
 (deftest find-holidays-2016
   (testing "Find all holidays for 2016"
     (let [year 2016

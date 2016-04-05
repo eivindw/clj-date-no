@@ -1,3 +1,5 @@
+[![Clojars Project](https://img.shields.io/clojars/v/clj-date-no.svg)](https://clojars.org/clj-date-no)
+
 # clj-date-no
 
 A Clojure library providing functions to calculate Norwegian holidays and working days.

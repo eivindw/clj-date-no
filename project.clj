@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [easter-day "0.1.1"]]
   :deploy-repositories [["releases" :clojars]
-                        ["snapshots" :clojars]])
+                        ["snapshots" :clojars]]
+  :repl-options {:init-ns date-no})
